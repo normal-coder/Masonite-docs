@@ -1,143 +1,143 @@
-# Introduction and Installation
+# 介绍与安装
 
-Stop using old frameworks with just a few confusing features. Masonite is the developer focused dev tool with all the features you need for the rapid development you deserve. Masonite is perfect for beginners getting their first web app deployed or advanced developers and businesses that need to reach for the full fleet of features available.
+## 介绍与安装
 
-Masonite works hard to be fast and easy from install to deployment so developers can go from concept to creation in as quick and efficiently as possible. Use it for your next SaaS! Try it once and you’ll fall in love.
+停止使用只有一些令人困惑的功能的旧框架吧！ Masonite 是专注于开发人员的开发工具，具有你应得的快速开发所需的所有功能。 Masonite 非常适合部署第一个 Web 应用程序的初学者或需要使用全部可用功能的高级开发人员和企业。
+
+Masonite 努力实现从安装到部署的快速和简单，因此开发人员可以尽可能快速高效地从概念到创建。将它用于你的下一个 SaaS！尝试一次，你就会爱上它。
 
 {% hint style="success" %}
-If you are more of a visual learner you can watch Masonite related tutorial videos at [MasoniteCasts.com](https://masonitecasts.com)
+提示：如果你更喜欢通过视觉进行学习，可以在 [MasoniteCasts.com](https://masonitecasts.com) 观看 Masonite 相关教程视频。
 {% endhint %}
 
-## Some Notable Features Shipped With Masonite
+### Masonite 附带的一些特色功能
 
-* Mail support for sending emails quickly.
-* Queue support to speed your application up by sending jobs to run on a queue or asynchronously.
-* Notifications for sending notifications to your users simply and effectively.
-* Task scheduling to run your jobs on a schedule (like everyday at midnight) so you can set and forget your tasks.
-* Events you can listen for to execute listeners that perform your tasks when certain events happen in your app.
-* A BEAUTIFUL Active Record style ORM called Masonite ORM. Amazingness at your fingertips.
-* Many more features you need which you can find in the docs!
+* 邮件支持：快速发送电子邮件。
+* 队列支持通过发送作业在队列上或异步运行来加速你的应用程序。
+* 通知服务支持简单有效地向你的用户发送通知。
+* 任务计划按计划运行你的工作（例如每天午夜），这样你就可以设置和忘记你的任务。
+* 当你的应用程序中发生某些事件时，你可以侦听以执行执行任务的侦听器的事件。
+* 一个漂亮的 Active Record 风格的 ORM，称为 Masonite ORM。这是你触手可及的惊喜。
+* 你可以在文档中找到更多你需要的功能！
 
-These, among many other features, are all shipped out of the box and ready to go. Use what you need when you need it.
+除了许多其他功能外，这些功能都已开箱即用。在需要时使用你需要的东西。
 
-## Requirements
+### 要求
 
-In order to use Masonite, you’ll need:
+为了使用 Masonite，你需要：
 
 * Python 3.7+
-* Latest version of OpenSSL
+* 最新版本的 OpenSSL
 * Pip3
 
 {% hint style="warning" %}
-All commands of python and pip in this documentation is assuming they are pointing to the correct Python 3 versions. For example, anywhere you see the `python` command ran it is assuming that is a Python 3.7+ Python installation. If you are having issues with any installation steps just be sure the commands are for Python 3.7+ and not 2.7 or below.
+注意：本文档中的所有 python 和 pip 命令都假设它们指向正确的 Python 3 版本。例如，在任何你看到 `python` 命令运行的地方，它都假定是 Python 3.7 Python 安装。如果你在任何安装步骤中遇到问题，请确保这些命令适用于 Python 3.7 而不是 2.7 或更低版本。
 {% endhint %}
 
-### Linux
+#### Linux
 
-If you are running on a Linux flavor, you’ll need the Python dev package and the libssl package. You can download these packages by running:
+如果你在 Linux 上运行，你需要 Python dev 包和 libssl 包。你可以通过运行下载这些包：
 
-#### Debian and Ubuntu based Linux distributions
+#### **Debian and Ubuntu based Linux distributions**
 
 {% code title="terminal" %}
-```text
+```
 $ sudo apt install python3-dev python3-pip libssl-dev build-essential python3-venv
 ```
 {% endcode %}
 
-Or you may need to specify your `python3.x-dev` version:
+或者你可能需要指定你的 `python3.x-dev` 版本：
 
 {% code title="terminal" %}
-```text
+```
 $ sudo apt-get install python3.7-dev python3-pip libssl-dev build-essential python3-venv
 ```
 {% endcode %}
 
-#### Enterprise Linux based distributions \(Fedora, CentOS, RHEL, ...\)
+基于企业 Linux 的发行版（Fedora、CentOS、RHEL、...）
 
 {% code title="terminal" %}
-```text
+```
 # dnf install python-devel openssl-devel
 ```
 {% endcode %}
 
-## Installation
+### 安装
 
 {% hint style="success" %}
-Be sure to join the [Discord Community](https://slack.masoniteproject.com) for help or guidance.
+提示：请务必加入 [Discord 社区](https://slack.masoniteproject.com) 以获得帮助或指导。
 {% endhint %}
 
-Masonite excels at being simple to install and get going. If you are coming from previous versions of Masonite, the order of some of the installation steps have changed a bit.
+Masonite 擅长安装和使用简单。如果你来自以前版本的 Masonite，则某些安装步骤的顺序会发生一些变化。
 
-Firstly, open a terminal and head to a directory you want to create your application in. You might want to create it in a programming directory for example:
+首先，打开一个终端并前往你要在其中创建应用程序的目录。你可能希望在编程目录中创建它，例如：
 
-```text
+```
 $ cd ~/programming
 $ mkdir myapp
 $ cd myapp
 ```
 
-If you are on windows you can just create a directory and open the directory in the Powershell.
+如果你在 Windows 上，你可以创建一个目录并在 Powershell 中打开该目录。
 
-## Activating Our Virtual Environment \(optional\)
+### 激活虚拟环境（可选）
 
-Although this step is technically optional, it is highly recommended. You can create a virtual environment if you don't want to install all of masonite's dependencies on your systems Python. If you use virtual environments then create your virtual environment by running:
+尽管此步骤在技术上是可选的，但强烈建议这样做。如果你不想在系统 Python 上安装所有 masonite 的依赖项，则可以创建一个虚拟环境。如果您使用虚拟环境，则通过运行以下命令创建您的虚拟环境：
 
 {% code title="terminal" %}
-```text
+```
 $ python -m venv venv
 $ source venv/bin/activate
 ```
 {% endcode %}
 
-or if you are on Windows:
+或者如果你使用的是 Windows：
 
 {% code title="terminal" %}
-```text
+```
 $ python -m venv venv
 $ ./venv/Scripts/activate
 ```
 {% endcode %}
 
 {% hint style="info" %}
-The `python` command here is utilizing Python 3. Your machine may run Python 2 \(typically 2.7\) by default for UNIX machines. You may set an alias on your machine for Python 3 or simply run `python3` anytime you see the `python` command.
-
-For example, you would run `python3 -m venv venv` instead of `python -m venv venv`
+提示：此处的 `python` 命令使用 Python 3。对于 UNIX 机器，你的机器可能默认运行 Python 2 （通常为 2.7）。你可以在你的机器上为 Python 3 设置一个别名，或者只要你看到 `python` 命令，就直接运行 `python3`。
 {% endhint %}
 
-# Installation
+## 安装 Masonite 包
 
-First install the Masonite package:
+首先安装 Masonite 包：
 
 ```
 $ pip install masonite
 ```
 
-Then start a new project:
+然后开始一个新项目：
 
 ```
 $ project start .
 ```
 
-This will create a new project in the current directory.
+这将在当前目录中创建一个新项目。
 
 {% hint style="info" %}
-If you want to create the project in a new directory (e.g. `my_project`) you must provide the directory name with `project start my_project`.
+提示：如果你想在新目录中创建项目（例如 `my_project`），你必须提供目录名称和 `project start my_project。`
 {% endhint %}
 
-Then install Masonite dependencies:
+然后安装 Masonite 依赖项：
 
 ```
 $ project install
 ```
 
 {% hint style="info" %}
-If you have created the project in a new directory you must go to this directory before running `project install`.
+提示：如果你在新目录中创建了项目，则必须在运行 `project install` 之前进入该目录。
 {% endhint %}
 
-Once installed you can run the development server:
+安装后，你可以运行开发服务器：
 
 ```
 $ python craft serve
 ```
 
-Congratulations! You’ve setup your first Masonite project! Keep going to learn more about how to use Masonite to build your applications.
+恭喜！你已经设置了你的第一个 Masonite 项目！继续了解有关如何使用 Masonite 构建应用程序的更多信息。

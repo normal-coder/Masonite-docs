@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Introduction and Installation](README.md)
+* [介绍与安装](README.md)
 
 ## Prologue
 
